@@ -1,0 +1,10 @@
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+server->browser: HTML code
+browser->server: HTTP GET /main.css
+server->browser: CSS code
+browser->server: HTTP GET /spa.js
+server->browser: javascript code
+browser->server: HTTP GET /data.json
+server->browser: json data
+note over browser
+using data.json on-browser js makes submitted notes appear on the page

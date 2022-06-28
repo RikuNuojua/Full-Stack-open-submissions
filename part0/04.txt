@@ -1,0 +1,21 @@
+note over browser
+User writes to the note/form and submits note/form by clicking "Save"
+end note
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+note over server
+Server procecces POST request: Gets time and date and saves the note/form with it to data.json.
+end note
+server->browser: HTTP (302 redirect to exampleapp/notes)
+note over browser
+By getting redirected to same URL site is being refrshed.
+end note
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server->browser: HTML code
+browser->server: HTTP GET /main.css
+server->browser: CSS code
+browser->server: HTTP GET /main.js
+server->browser: javascript code
+browser->server: HTTP GET /data.json
+server->browser: json data
+note over browser
+using data.json on browser js makes the submitted note/form appear on the page
